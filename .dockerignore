@@ -1,0 +1,12 @@
+.git
+.gitignore
+.env
+.env.local
+node_modules
+var/cache/*
+var/logs/*
+app/cache/*
+.DS_Store
+*.swp
+*.swo
+.idea
