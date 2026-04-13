@@ -9,8 +9,8 @@ RUN apk add --no-cache \
     mysql-client \
     supervisor \
     bash \
+    nodejs \
     npm \
-    node \
     libpng-dev \
     libjpeg-turbo-dev \
     freetype-dev \
