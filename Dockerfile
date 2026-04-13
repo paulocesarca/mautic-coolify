@@ -1,5 +1,7 @@
 FROM php:8.2-fpm-alpine
 
+COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/local/bin/
+
 RUN apk add --no-cache \
     nginx \
     curl \
@@ -10,17 +12,19 @@ RUN apk add --no-cache \
     supervisor \
     bash \
     nodejs \
-    npm \
-    oniguruma-dev \
-    curl-dev
+    npm
 
-RUN docker-php-ext-install \
+RUN install-php-extensions \
     mysqli \
-    pdo \
     pdo_mysql \
     mbstring \
     curl \
-    opcache
+    opcache \
+    gd \
+    intl \
+    zip \
+    xml \
+    ldap
 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
