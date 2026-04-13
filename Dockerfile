@@ -10,7 +10,9 @@ RUN apk add --no-cache \
     supervisor \
     bash \
     nodejs \
-    npm
+    npm \
+    oniguruma-dev \
+    curl-dev
 
 RUN docker-php-ext-install \
     mysqli \
