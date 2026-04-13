@@ -1,0 +1,25 @@
+<?php
+$config = array(
+    'db_driver' => 'pdo_mysql',
+    'db_host' => getenv('DB_HOST') ?: 'mautic-db',
+    'db_port' => getenv('DB_PORT') ?: 3306,
+    'db_name' => getenv('DB_NAME') ?: 'mautic',
+    'db_user' => getenv('DB_USER') ?: 'mautic',
+    'db_password' => getenv('DB_PASSWORD') ?: 'mautic',
+    'db_table_prefix' => '',
+    'admin_path' => 'admin',
+    'cache_path' => '%kernel.project_dir%/var/cache',
+    'log_path' => '%kernel.project_dir%/var/logs',
+    'image_path' => 'media/images',
+    'upload_dir' => 'media/files',
+    'mailer_from_name' => getenv('MAILER_FROM_NAME') ?: 'Mautic',
+    'mailer_from_email' => getenv('MAILER_FROM_EMAIL') ?: 'noreply@example.com',
+    'mailer_host' => getenv('MAILER_HOST') ?: 'smtp.sendgrid.net',
+    'mailer_port' => getenv('MAILER_PORT') ?: 587,
+    'mailer_user' => getenv('MAILER_USER') ?: 'apikey',
+    'mailer_password' => getenv('MAILER_PASSWORD') ?: 'senha',
+    'mailer_auth_mode' => 'login',
+    'cache_adapter' => getenv('CACHE_ADAPTER') ?: 'redis',
+    'cache_redis_dsn' => getenv('REDIS_DSN') ?: 'redis://mautic-redis:6379/1',
+);
+?>
